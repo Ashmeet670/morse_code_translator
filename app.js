@@ -6,33 +6,29 @@ const previousTextInputValue = {
 }
 
 const toMode = {
-    "morseText": "Text",
-    "textMorse": "Morse"
+    "morseText": ["MORSE","TEXT"],
+    "textMorse": ["TEXT","MORSE"]
 }
 
-const inputText = {
-    "morseText": 'Type morse code here, use "." key for a dot and "-" key for a dash, (2 spaces) for space between words and (1 space) for space between alphabets',
-    "textMorse": 'Type text here, use only alphabets (a-z) and numbers (0-9)'
-}
 
 function translationModeChange(btn) {
 
 
-    document.getElementById("morseText").classList.remove("translatorButtonSelected")
-    document.getElementById("textMorse").classList.remove("translatorButtonSelected")
+    document.getElementById("morseText").classList.remove("selected")
+    document.getElementById("textMorse").classList.remove("selected")
 
-    btn.classList.add("translatorButtonSelected")
+    btn.classList.add("selected")
 
     previousTextInputValue[translateMode] = document.getElementById("inputTextBox").value
     translateMode = btn.id
-    document.getElementById("inputTextBox").placeholder = inputText[translateMode]
-    document.getElementById("inputTextBox").value = previousTextInputValue[translateMode]
+
+    document.getElementById('ttInput').innerText = ">> INPUT [" + toMode[translateMode][0] + "]"
+    document.getElementById('ttOutput').innerText = ">> OUTPUT [" + toMode[translateMode][1]+ "]"
+
+
+    document.getElementById("inputTextBox").value = previousTextInputValue[btn.id]
     document.getElementById("outputText").innerHTML = ""
 
-
-    document.getElementsByName("copyBtn").forEach(btn => {
-        btn.innerText = `Copy ${toMode[translateMode]}`
-    });
 }
 
 

@@ -1,50 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-    font-family: "Aldrich", sans-serif;
+    font-family: "Quantico", sans-serif;
     user-select: none;
     -webkit-user-select: none;
 }
 
+:root {
+    --accent: rgb(107, 255, 139);
+    --accentDarker: rgb(75, 197, 101);
+    --bg: rgb(8, 17, 11);
+}
 
 body {
-    background-color: #28352f;
+    background-color: var(--bg);
+    color: var(--accent);
 }
 
 .title {
-    font-family: "Black Ops One", system-ui;
-    font-size: clamp(40px, 5vw, 60px);
-    color: #60712f;
+    font-family: "Black Ops One", sans-serif;
+    font-size: clamp(20px, 3.3vw, 45px);
 }
 
 .translatorSelect {
-    box-sizing: border-box;
-    font-size: clamp(18px, 1.2vw, 26px);
+    font-size: clamp(12px, 1.1vw, 25px);
     width: fit-content;
     cursor: pointer;
     transition: 0.2s;
-    border-bottom: 4px solid #60712f00;
+    border: 2px solid var(--accent);
+}
+
+.translatorSelect.selected {
+    border: 2px solid var(--accentDarker);
+    background-color: var(--accent);
+    color: var(--bg);
+
+}
+
+.translationBox {
+    width: 45vw !important;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    aspect-ratio: 1/0.5;
+    font-size: clamp(20px, 1.3vw, 33px);
+    background-color: var(--bg);
+}
+
+.translationBox .topText{
+    font-size: clamp(17px, 1.1vw, 30px);
+    color: var(--accentDarker);
     filter: brightness(0.9);
+
 }
 
-.translatorButtonSelected {
-    filter: brightness(1.3);
-    border-bottom: 4px solid #60712f;
-}
+#inputTextBox{
+    background-color: var(--bg);
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: var(--accent);
 
-.modeSelect{
-    color: #60712f;
-    background-color: #28352f;
 }
 
 #inputTextBox {
-    background-color: #375b3f;
-    border: 3px solid #214c2a;
     resize: none;
-    aspect-ratio: 1/0.5;
-    font-size: clamp(20px, 1.3vw, 33px);
-    color: black;
     user-select: auto;
     -webkit-user-select: auto;
 }
@@ -53,11 +74,12 @@ body {
     outline: none;
 }
 
-#inputTextBox::placeholder {
-    color: rgb(40, 40, 40);
+
+#outputText {
+    resize: none;
 }
 
-.translate {
+.translateBtn {
     color: black;
     font-size: clamp(16px, 1.2vw, 40px);
     width: fit-content;
@@ -67,7 +89,6 @@ body {
     cursor: pointer;
     transition: 0.2s;
     user-select: none;
-    -webkit-user-select: none;
 }
 
 .buttonClickAnimate {
@@ -87,20 +108,6 @@ body {
         scale: 1;
     }
 }
-
-#outputText {
-    background-color: #375b3f;
-    border: 3px solid #214c2a;
-    aspect-ratio: 1/0.5;
-    resize: none;
-    font-size: clamp(20px, 1.3vw, 33px);
-    color: black;
-}
-
-.translationBox {
-    width: 45%;
-}
-
 
 .alertCardTextCopied {
     position: fixed;
@@ -146,7 +153,6 @@ body {
 /* sm */
 @media only screen and (max-width:576px) {
     .title {
-        font-family: "Black Ops One", system-ui;
         font-size: clamp(30px, 10vw, 60px);
     }
 
