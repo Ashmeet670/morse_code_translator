@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Silkscreen:wght@400;700&display=swap');
 
 * {
     font-family: "Quantico", sans-serif;
@@ -20,7 +19,7 @@ body {
 }
 
 .title {
-    font-family: "Black Ops One", sans-serif;
+    font-family: 'Share Tech Mono', sans-serif;
     font-size: clamp(20px, 3.3vw, 45px);
 }
 
@@ -46,12 +45,14 @@ body {
     aspect-ratio: 1/0.5;
     font-size: clamp(20px, 1.3vw, 33px);
     background-color: var(--bg);
+
 }
 
 .translationBox .topText{
     font-size: clamp(17px, 1.1vw, 30px);
     color: var(--accentDarker);
     filter: brightness(0.9);
+    font-family: 'Silkscreen', monospace;
 
 }
 
@@ -96,7 +97,7 @@ body {
 }
 
 .buttonClickAnimate {
-    animation: buttonClick 0.3s ease forwards;
+    animation: buttonClick 0.2s ease forwards;
 }
 
 @keyframes buttonClick {
@@ -119,7 +120,7 @@ body {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    background-color: #7a9855;
+    border: 2px solid var(--accent);
     width: fit-content;
     font-size: clamp(14px, 2vw, 14px);
     animation: fade-in-down 0.8s 0s forwards;
@@ -158,62 +159,15 @@ body {
 
 /* sm */
 @media only screen and (max-width:576px) {
-    .title {
-        font-size: clamp(30px, 10vw, 60px);
-    }
-
-    .translationBox {
-        width: 90%;
-    }
-
-    #inputTextBox {
-        aspect-ratio: 1/0.7;
-        font-size: clamp(15px, 5vw, 33px);
-    }
-
-    #outputText {
-        aspect-ratio: 1/0.7;
-        font-size: clamp(15px, 5vw, 33px);
-    }
-
-    .translate {
-        font-size: clamp(18px, 4.5vw, 40px);
-    }
 
 }
 
 /* md */
 @media only screen and (max-width:768px) {
-    .title {
-        font-size: clamp(30px, 11vw, 50px);
-    }
-
-    .translationBox {
-        width: 75%;
-    }
-
-    #inputTextBox {
-        font-size: clamp(15px, 3vw, 33px);
-    }
-
-    #outputText {
-        font-size: clamp(15px, 3vw, 33px);
-    }
-
-    .translate {
-        font-size: clamp(18px, 3vw, 40px);
-    }
-
-    .translatorSelect {
-        font-size: clamp(21px, 3vw, 26px);
-    }
+    
 }
 
 /* lg */
 @media only screen and (min-width:992px) {
-    .translationBox {
-        width: 45%;
-    }
-
-
+   
 }
