@@ -12,7 +12,7 @@ Rules:
 Type the morse code you want to trnaslate into text.
 Rules:
  - Only "." and  "-" are allowed
- - As of now the program can only convert alphabets and number forms of code into text
+ - The program can only convert alphabets and number forms of code into text
  - Add __single__ space between individual characters/alphabets and __double__ space between individual words
  - Dont use any special characters/puntuation marks
 
