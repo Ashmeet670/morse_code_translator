@@ -23,7 +23,7 @@ function translationModeChange(btn) {
     translateMode = btn.id
 
     document.getElementById('ttInput').innerText = ">> INPUT [" + toMode[translateMode][0] + "]"
-    document.getElementById('ttOutput').innerText = ">> OUTPUT [" + toMode[translateMode][1]+ "]"
+    document.getElementById('ttOutput').innerText = ">> OUTPUT [" + toMode[translateMode][1] + "]"
 
 
     document.getElementById("inputTextBox").value = previousTextInputValue[btn.id]
@@ -73,7 +73,7 @@ const alphabetMorseC = {
     'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
     'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--',
     '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
-    '9': '----.', ' ': '  '
+    '9': '----.', ' ': ' '
 }
 
 
@@ -96,7 +96,7 @@ function translatesTextMorse() {
 
         for (i in text1) {
             if (!convertable.includes(text1[i]) && !convertable.includes(Number(text1[i]))) {
-                console.log("E")
+                console.log("Error")
                 document.getElementById("outputText").textContent = "Invalid Input!"
                 valid = false
                 break
@@ -114,8 +114,7 @@ function translatesTextMorse() {
                 morse1 += `${alphabetMorseC[text1[i]]} `
             }
 
-            document.getElementById("outputText").innerHTML = ""
-            document.getElementById("outputText").insertAdjacentHTML("beforeend", morseNB)
+            document.getElementById("outputText").innerHTML = morseNB
         }
 
     }
@@ -130,7 +129,7 @@ const morseAlphabet = {
     '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
     '--..': 'Z', '-----': '0', '.----': '1', '..---': '2', '...--': '3',
     '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8',
-    '----.': '9', "": "&nbsp;"
+    '----.': '9', "": " "
 };
 
 
